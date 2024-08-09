@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 1</title>
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+
+    @keyframes move-out {
+      from {
+        transform: translateY(0%);
+      }
+
+      to {
+        transform: translateX(100%);
+      }
+    }
+
+    @keyframes move-in {
+      0% {
+        transform: translateX(-20%);
+        opacity: 0;
+      }
+
+      50% {
+        transform: translateX(-20%);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateX(0%);
+      }
+    }
+
+
+    ::view-transition-old(root) {
+      animation: 0.4s ease-in both move-out;
+      z-index: 2;
+    }
+
+    ::view-transition-new(root) {
+      animation: 0.4s ease-in both move-in;
+      z-index: 1;
+    }
+
+
+    body {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="/page2.html">Page 2</a>
+  <h1>Page 1</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, dolorem magni aliquid officia quos illo!
+  </p>
+</body>
+
+</html>
